@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PCLCE · 下载</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --bg-soft: #121829;
+      --accent: #4f8cff;
+      --accent-2: #7c5cff;
+      --accent-glow: rgba(79, 140, 255, 0.55);
+      --text: #eef2ff;
+      --text-dim: #9aa6c4;
+      --card: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(124, 92, 255, 0.25), transparent 60%),
+        radial-gradient(1000px 500px at -10% 110%, rgba(79, 140, 255, 0.22), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 880px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+    }
+    .badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #36d399;
+      box-shadow: 0 0 10px #36d399;
+    }
+
+    .logo {
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1;
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 60%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+    }
+
+    /* 醒目的下载按钮 */
+    .download-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 44px;
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      box-shadow:
+        0 10px 30px var(--accent-glow),
+        0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    .download-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow:
+        0 16px 44px var(--accent-glow),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+      animation-play-state: paused;
+    }
+    .download-btn:active { transform: translateY(0) scale(0.99); }
+
+    .download-btn svg { width: 26px; height: 26px; }
+
+    .download-meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 10px 30px var(--accent-glow), 0 0 0 1px rgba(255,255,255,0.12) inset; }
+      50% { box-shadow: 0 12px 40px rgba(124,92,255,0.6), 0 0 0 1px rgba(255,255,255,0.18) inset; }
+    }
+
+    .card {
+      margin-top: 56px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: left;
+      backdrop-filter: blur(8px);
+    }
+    .card h2 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+    }
+    .card p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    footer {
+      margin-top: 48px;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 640px) {
+      .logo { font-size: 46px; }
+      .download-btn { padding: 18px 32px; font-size: 17px; }
+      .card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="badge"><span class="dot"></span> 最新版本 · 立即获取</div>
+
+    <h1 class="logo">PCLCE</h1>
+    <p class="tagline">一键下载，快速开始你的体验</p>
+
+    <!-- 醒目的下载按钮，指向根目录下的 pclce.exe -->
+    <a class="download-btn" href="./pclce.exe" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12" />
+        <path d="M7 11l5 5 5-5" />
+        <path d="M5 21h14" />
+      </svg>
+      下载 pclce.exe
+    </a>
+    <p class="download-meta">免费 · 安全 · 适用于 Windows</p>
+
+    <section class="card">
+      <h2>软件描述</h2>
+      <p>aaa</p>
+    </section>
+
+    <footer>© PCLCE · 本网站所有权利归所有者所有</footer>
+  </main>
+</body>
+</html>
